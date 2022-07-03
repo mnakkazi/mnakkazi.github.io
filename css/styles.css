@@ -1,0 +1,400 @@
+/* ======================================
+VARIABLES
+====================================== */  
+:root {
+    --mainColor: rgb(13, 70, 185);
+    --mainColorLight: rgb(25, 82, 196);
+    --secondaryColor: rgb(227, 171, 49);
+    --secondaryColorDark: rgb(244, 170, 43);
+    --backgroundColor: rgb(244, 232, 213);
+    --textColor: rgb(88, 46, 25);
+    --textColor2: rgb(155, 104, 78);
+}
+
+/* ======================================
+MAIN STYLES
+====================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15em;
+    line-height: 1.4;
+}
+
+main {
+    margin: 1rem;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 2.5rem 0 1.5rem;
+    color: var(--textColor);
+}
+
+h3 {
+    margin: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+li {
+    list-style: none;
+    padding: .4rem;
+}
+
+p {
+    margin-bottom: 2.5rem;
+    padding: 0 1rem;
+}
+
+main p {
+    color: var(--textColor2);
+}
+
+span {
+    background-color: rgba(25, 82, 196, .4);
+    width: 80%;
+    height: 3px;
+    margin: 0 auto;
+}
+
+.about {
+    background: rgb(235, 235, 235);
+    box-shadow: 1px 2px 6px var(--mainColorLight);
+    padding: .10rem .4rem;
+}
+
+/* ======================================
+HEADER
+====================================== */
+header {
+    background: url('../img/me1.png') right top/cover no-repeat var(--mainColor);
+    background-blend-mode: multiply;
+    color: var(--secondaryColor);
+}
+
+#close {
+    display: none;
+    width: 15%;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav,
+.top-nav img,
+.top-nav p {
+    padding: .5rem;
+}
+
+.nav-links {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--backgroundColor);
+    top: 0;
+    right: 100%;
+    padding: .2rem;
+    transition: all .4s ease-in-out;
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.link {
+    display: block;
+    font-size: 2em;
+    margin: 2rem;
+}
+
+.name-container {
+    font-family: 'Trispace', sans-serif;
+    font-size: 1.4em;
+    line-height: 1.2;
+}
+
+h1 {
+    padding: 2rem 2rem 3rem;
+}
+
+/* ======================================
+PROJECTS
+====================================== */
+.project-head {
+    color: var(--secondaryColor);
+    font-size: 1em;
+}
+
+.projects img {
+    width: 40%;
+    background: var(--backgroundColor);
+    border-radius: 10px;
+    padding: 1.4rem;
+    margin: 3rem auto 2rem; 
+}
+
+/* ======================================
+FOOTER
+====================================== */
+footer {
+    background-color: var(--secondaryColorDark);
+    border-top: 6px solid var(--textColor);
+    margin-top: 4rem;
+}
+
+svg {
+    width: 12%;
+    height: 38px;
+    margin: .6rem 1rem;
+    fill: var(--textColor);
+}
+
+#contact {
+    padding: .8rem;
+    text-align: left;
+}
+
+.copyright {
+    color: var(--textColor);
+    text-align: right;
+    padding: .6rem;
+}
+
+/* ======================================
+SHARED STYLES
+====================================== */
+h2, p, .nav-links,
+.project-head,
+.name-container {
+    text-align: center;
+}
+
+.name-container,
+.project-head {
+    text-transform: uppercase;
+}
+
+.name-container,
+ h1, ul, .top-nav p,
+.copyright, #contact {
+    margin: 0;
+}
+
+span, svg,
+.projects img,
+.nav-links.active {
+    display: block;
+}
+
+/* ======================================
+768PX BREAK POINT
+====================================== */
+@media screen and (min-width: 768px) {
+    main {
+        margin: 1.5rem;
+    }
+
+    .top-nav {
+        flex-direction: column;
+    }
+
+    .top-nav p {
+        padding: 1.6rem;
+    }
+
+    .nav-links,
+    .projects,
+    footer nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-links,
+    .projects img:hover {
+        background: none;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 2rem;
+        position: static;
+        height: auto;
+    } 
+
+    .link {
+        color: rgb(235, 235, 235);
+        font-size: 1.1em;
+        text-transform: uppercase;
+        text-decoration: underline;
+        transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+        margin: .4rem;
+    }
+
+    .link:hover {
+        color:rgb(155, 104, 78);
+    }
+
+    #menu, span {
+        display: none;
+    }
+
+    h1 {
+        padding: 1rem 0 3rem;
+    }
+
+    .about {
+        margin-top: 1.5rem;
+    }
+
+    .about:hover {
+        box-shadow: 1px 2px 6px var(--textColor2);
+    }
+
+    #projects {
+        margin-top: 4rem;
+        font-size: 2.4em;
+    }
+
+    .projects {
+        justify-content: flex-start;
+        margin-top: 3.5rem;
+    }
+
+    .projects img {
+        margin: 1rem;
+        width: 80%;
+        height: 90%;
+        transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .text-container {
+        width: 100%;
+    }
+
+    .project-head, svg {
+        transition: all .6s ease-in-out;
+    }
+
+    .project-head:hover {
+        color: var(--mainColor);
+    }
+
+    footer nav {
+        justify-content: space-around;
+        margin-bottom: 1rem;
+    }
+
+    svg {
+        width: 60%;
+    }
+
+    svg:hover {
+        fill: var(--mainColor);
+    }
+
+    .copyright, #contact {
+        text-align: center;
+    }
+
+    .copyright,
+    .text-container {
+        font-size: .8em;
+    }
+}
+
+/* ======================================
+1024PX BREAK POINT
+====================================== */
+@media screen and (min-width: 1024px) {
+    .top-nav {
+        padding: 1rem;
+    }
+
+    .top-nav,
+    .container {
+        flex-direction: row;
+    }
+
+    .nav-links {
+        flex: .5;
+    }
+
+    .link {
+        text-decoration: none;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .about {
+        max-width: 960px;
+    }
+
+    .about,
+    .projects img {
+        margin: 0 auto;
+    }
+
+    #projects {
+        margin-top: 3rem;
+    }
+
+    .projects {
+        flex-direction: column;
+        margin-top: .8rem;
+        flex: 1 320px;
+    }
+
+    .projects img {
+        display: block;
+        width: 50%;
+    }
+
+    .text-container {
+        width: 90%;
+        margin-left: 1rem;
+    }
+
+    .text-container p {
+        text-align: justify;
+    }
+
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .footer-div,
+    .footer-div nav,
+    .container {
+        display: flex;
+    }
+
+    .footer-div,
+    .footer-div nav {
+        justify-content: space-between;
+    }
+
+    .footer-div nav {
+        gap: 6rem;
+    }
+
+    svg {
+        margin-right: 1rem;
+    }
+
+    .copyright {
+        font-size: 1em;
+    }
+}
