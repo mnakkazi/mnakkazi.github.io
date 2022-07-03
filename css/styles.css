@@ -129,6 +129,15 @@ h1 {
 }
 
 /* ======================================
+KEYFRAMES
+====================================== */
+@keyframes pulse {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* ======================================
 PROJECTS
 ====================================== */
 .project-head {
@@ -141,7 +150,11 @@ PROJECTS
     background: var(--backgroundColor);
     border-radius: 10px;
     padding: 1.4rem;
-    margin: 3rem auto 2rem; 
+    margin: 2rem auto 1rem; 
+}
+
+.animate {
+    animation: pulse 2s .6s ease-in-out;
 }
 
 /* ======================================
@@ -220,12 +233,8 @@ span, svg,
         flex-direction: row;
     }
 
-    .nav-links,
-    .projects img:hover {
-        background: none;
-    }
-
     .nav-links {
+        background: none;
         justify-content: center;
         gap: 2rem;
         position: static;
@@ -274,7 +283,12 @@ span, svg,
     .projects img {
         margin: 1rem;
         width: 80%;
+        animation: none;
         transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .projects img:hover {
+        background: var(--mainColorLight);
     }
 
     .text-container {

@@ -36,3 +36,34 @@ function hideNav() {
     menu.style.opacity = 1;
     close.style.display = 'none';
 }
+
+/* =======================================
+ANIMATE PROJECT SVG
+======================================== */
+/* Source: https://www.dev-tips-and-tricks.com/animate-elements-scrolled-view-vanilla-js */
+(function() {
+    var projectsImg;
+    var windowHeight;
+  
+    function init() {
+      projectsImg = document.querySelectorAll('.projects img');
+      windowHeight = window.innerHeight;
+    }
+  
+    function checkPosition() {
+      for (var i = 0; i < projectsImg.length; i++) {
+        var img = projectsImg[i];
+        var positionFromTop = projectsImg[i].getBoundingClientRect().top;
+  
+        if (positionFromTop - windowHeight <= 0) {
+          img.classList.add('animate');
+        }
+      }
+    }
+  
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('resize', init);
+  
+    init();
+    checkPosition();
+  })();
