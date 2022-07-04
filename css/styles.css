@@ -154,7 +154,7 @@ PROJECTS
 }
 
 .animate {
-    animation: pulse 2s .6s ease-in-out 2;
+    animation: pulse 2s .6s ease-in-out;
 }
 
 /* ======================================
