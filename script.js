@@ -6,6 +6,7 @@ const close = document.getElementById('close');
 const navigation = document.querySelector('.nav-links');
 const links = document.querySelectorAll('.link');
 
+
 /* =======================================
 DISPLAY NAV
 ======================================== */
@@ -14,6 +15,7 @@ menu.addEventListener('click', (e) => {
     menu.style.opacity = 0;
     close.style.display = 'block';
 });
+
 
 /* =======================================
 HIDE NAVIGATION
@@ -28,6 +30,7 @@ close.addEventListener('click', (e) => {
     hideNav(); 
 })
 
+
 /* =======================================
 HIDE NAV FUNCTION
 ======================================== */
@@ -37,33 +40,27 @@ function hideNav() {
     close.style.display = 'none';
 }
 
+
 /* =======================================
 ANIMATE PROJECT SVG
 ======================================== */
-/* Source: https://www.dev-tips-and-tricks.com/animate-elements-scrolled-view-vanilla-js */
-(function() {
-    var projectsImg;
-    var windowHeight;
-  
-    function init() {
-      projectsImg = document.querySelectorAll('.projects img');
-      windowHeight = window.innerHeight;
+
+/* Source: https://codepen.io/alvarotrigo/pen/XWaYRKK */
+
+function animate() {
+  var animates = document.querySelectorAll(".projects img");
+
+  for (var i = 0; i < animates.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = animates[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      animates[i].classList.add("animate");
+    } else {
+      animates[i].classList.remove("animate");
     }
-  
-    function checkPosition() {
-      for (var i = 0; i < projectsImg.length; i++) {
-        var img = projectsImg[i];
-        var positionFromTop = projectsImg[i].getBoundingClientRect().top;
-  
-        if (positionFromTop - windowHeight <= 0) {
-          img.classList.add('animate');
-        }
-      }
-    }
-  
-    window.addEventListener('scroll', checkPosition);
-    window.addEventListener('resize', init);
-  
-    init();
-    checkPosition();
-  })();
+  }
+}
+
+window.addEventListener("scroll", animate);
