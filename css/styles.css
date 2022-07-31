@@ -74,7 +74,8 @@ span {
 HEADER
 ====================================== */
 header {
-    background: url('../img/me1.png') right top/cover no-repeat var(--mainColor);
+    /* background: url('../img/me1.png') right top/cover no-repeat var(--mainColor); */  /* hide image */
+    background: var(--mainColor);
     background-blend-mode: multiply;
     color: var(--secondaryColor);
 }
