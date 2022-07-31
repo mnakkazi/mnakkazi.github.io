@@ -28,7 +28,7 @@ links.forEach(link => {
 
 close.addEventListener('click', (e) => {  
     hideNav(); 
-})
+});
 
 
 /* =======================================
